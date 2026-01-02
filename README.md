@@ -64,8 +64,9 @@ southern_mammoth/
 ├── index.html          # Landing page with cave list
 ├── ferguson.html       # Ferguson Cave waiver
 ├── hatcher.html        # Hatcher Pit waiver
-├── styles.css          # Shared styling
 └── README.md          # This file
+
+Note: All styling is done with Tailwind CSS (loaded via CDN in each HTML file)
 ```
 
 ## Local Development
@@ -75,9 +76,11 @@ To view the site locally, simply open `index.html` in a web browser. No build pr
 ## Technology
 
 - Pure HTML5
-- CSS3 (with CSS Grid and Flexbox)
-- No JavaScript frameworks or dependencies
-- 100% static site
+- Tailwind CSS (via CDN)
+- Dark theme with emerald green accents
+- Glass morphism effects with backdrop blur
+- Print-friendly CSS
+- 100% static site (no build process required)
 
 ## Maintenance
 
