@@ -29,14 +29,6 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(16, 185, 129, 0.2);
         }
-        .signature-line {
-            border-bottom: 2px solid #4b5563;
-            min-height: 40px;
-            transition: border-color 0.3s;
-        }
-        .signature-line:hover {
-            border-color: #10b981;
-        }
         @media print {
             body {
                 background: white;
@@ -50,9 +42,6 @@
             }
             .print-black {
                 color: black !important;
-            }
-            .signature-line {
-                border-bottom: 1px solid black;
             }
         }
     </style>
@@ -85,16 +74,51 @@
             <p class="text-cave-emerald-light font-mono text-sm mt-2 print-black">Non-Commercial Vertical Entrance</p>
         </div>
 
-        <!-- Waiver Content -->
-        <div class="waiver-content rounded-lg p-8 mb-8">
+        <!-- Success Message (hidden by default) -->
+        <div id="successMessage" class="hidden mb-8 p-6 bg-green-500/20 border border-green-500/50 rounded-lg">
+            <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="text-green-500 font-semibold text-lg mb-1">Waiver Submitted Successfully!</h3>
+                    <p class="text-gray-300">Your waiver has been submitted and a copy has been sent to Jeff Hatcher and you. Await confirmation from the property owner before accessing the cave.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Message (hidden by default) -->
+        <div id="errorMessage" class="hidden mb-8 p-6 bg-red-500/20 border border-red-500/50 rounded-lg">
+            <div class="flex items-start gap-4">
+                <svg class="w-6 h-6 text-red-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="text-red-500 font-semibold text-lg mb-1">Submission Failed</h3>
+                    <p class="text-gray-300" id="errorText">There was an error submitting your waiver. Please try again or contact support.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Waiver Form -->
+        <form id="waiverForm" class="waiver-content rounded-lg p-8 mb-8">
+            <input type="hidden" name="cave" value="Hatcher Pit Cave">
+            <input type="hidden" name="waiverDate" value="01/2026">
 
             <!-- Main Agreement -->
             <section class="mb-8">
                 <h3 class="text-2xl font-bold text-cave-emerald-light mb-2 print-black">Release and Waiver of Liability Agreement</h3>
                 <p class="text-gray-400 text-sm mb-4 print-black">(01/2026)</p>
 
-                <p class="text-gray-300 mb-4 leading-relaxed print-black">
-                    I, the undersigned, (please print) <span class="inline-block border-b border-gray-500 min-w-[200px] px-2">________________</span>, in consideration of my being granted permission, from time to time, to visit Hatcher Pit Cave, located on the property of Jeff Hatcher, such permission granted to me at my specific request, hereby agree as follows:
+                <div class="mb-6">
+                    <label for="participantName" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Full Name (please print) *</label>
+                    <input type="text" id="participantName" name="participantName" required
+                           class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                           placeholder="Your full legal name">
+                </div>
+
+                <p class="text-gray-300 leading-relaxed print-black mb-4">
+                    I, the undersigned, in consideration of my being granted permission, from time to time, to visit Hatcher Pit Cave, located on the property of Jeff Hatcher, such permission granted to me at my specific request, hereby agree as follows:
                 </p>
 
                 <p class="text-gray-300 leading-relaxed print-black">
@@ -106,181 +130,198 @@
             <section class="mb-8 pb-8 border-b border-gray-700/50">
                 <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">White-nose Syndrome Prevention</h3>
 
-                <p class="text-gray-300 leading-relaxed print-black">
+                <p class="text-gray-300 leading-relaxed print-black mb-4">
                     I will not enter the cave with muddy or soiled clothes, boots, or other gear as a preventative measure against the human transportation of the fungus Pseudogymnoascus destructans (the cause of White-nose Syndrome) or other pathogens that may have negative impacts on the fauna of the cave. Equipment and clothing known to have been used in other cave regions will be properly decontaminated using accepted methods (see the NSS or USFWS websites) prior to entering Hatcher Pit. Likewise, I will properly clean and decontaminate all my equipment, clothing, and boots AFTER visiting this cave.
                 </p>
+
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" name="wnsAcknowledge" required class="mt-1 w-5 h-5 rounded border-gray-600 bg-cave-dark text-cave-emerald focus:ring-cave-emerald">
+                    <span class="text-gray-300">I acknowledge and agree to follow White-nose Syndrome prevention protocols *</span>
+                </label>
             </section>
 
             <!-- Acknowledgments -->
             <section class="mb-8 pb-8 border-b border-gray-700/50">
                 <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Acknowledgments</h3>
 
-                <div class="space-y-4 text-gray-300 leading-relaxed print-black">
+                <div class="space-y-4 text-gray-300 leading-relaxed print-black mb-6">
                     <p>I acknowledge that Hatcher Pit is a completely "wild" cave (non-commercial cave), and no improvements have been made or are desirable. I understand that a visit to a wild cave involves certain risks including but not limited to those listed on this Release and Waiver Agreement. I desire to visit Hatcher Pit and will do so completely at my own risk.</p>
-
                     <p>I acknowledge that Hatcher Pit is a vertical cave entrance and that a very real danger of becoming lost, injured, or trapped exists within the cave system.</p>
-
                     <p>I acknowledge the cave entrance is a vertical pit with associated inherent risks and dangers. I acknowledge that I am certified and well trained in vertical caving and own my own gear and will be using my own gear. I will not be sharing gear with others.</p>
-
                     <p>I acknowledge that I will be using existing manmade or natural rigging points and/or anchors for attaching my rope(s) to and these could break or dislodge accidentally or by unknown means. I will use a backup rig point for all anchors and rigging points.</p>
-
                     <p>I acknowledge that regions of Hatcher Pit may be physically demanding and may require exposure to cold water with the associated risks.</p>
-
                     <p>I acknowledge that any or all of the cave passage could and is known to flood partially and/or completely, and that it is impossible to predict the time lag between rainfall and flood-flow in the cave. I understand that the water in Hatcher Pit may be polluted and may be dangerous to my health.</p>
-
                     <p>I acknowledge that steep, slippery mud banks, loose piles of rock, unstable formations, and rock falls occur in various locations in the cave and pose hazards known or unknown, such as, but not limited to, slipping, falling, and being hit or crushed.</p>
-
                     <p>I acknowledge that there may be higher levels of radioactivity in a limestone cave as compared to the surface of the earth for completely natural reasons and that the effect of this radiation on a cave explorer is unknown; but that smoking increases the amount of this radiation absorbed by the body. I will not smoke in the cave.</p>
-
                     <p>I acknowledge that access to Hatcher Pit may be controlled by a locked gate or other means and that access requirements may change at any time. I understand that, due to a mechanical malfunction of any gate or lock, that I may be unable to get out of the cave. I will prepare for this eventuality by telling someone of my plans and carrying adequate food and clothing.</p>
-
                     <p>I acknowledge that any gate or entrance structure is heavy and combined with the vertical entrance could result in injury if opened, dropped, closed, or misused while someone is entering, exiting, climbing, or rappelling the entrance drop. I will not use any gate or structure as a hand hold or for any other means while using this entrance.</p>
-
                     <p>I acknowledge that I have the proper equipment to go caving, to include but not limited to, three sources of lights, helmet, gloves, and boots, in addition to the necessary vertical cave equipment. I am well versed and trained in caving first aid, cave rescue, and caving self-rescue.</p>
                 </div>
+
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" name="risksAcknowledge" required class="mt-1 w-5 h-5 rounded border-gray-600 bg-cave-dark text-cave-emerald focus:ring-cave-emerald">
+                    <span class="text-gray-300">I acknowledge all risks and hazards described above *</span>
+                </label>
             </section>
 
             <!-- Cave Conservation and Safety Rules -->
             <section class="mb-8 pb-8 border-b border-gray-700/50">
                 <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Cave Conservation and Safety Rules</h3>
 
-                <div class="space-y-4 text-gray-300 leading-relaxed print-black">
+                <div class="space-y-4 text-gray-300 leading-relaxed print-black mb-6">
                     <p>I will not leave anything in the cave that I took in with me and I will not bring anything extra out of the cave except the normal mud on my clothing and all trash that is left by other cavers.</p>
-
                     <p>I will not make any changes to the cave including digging or modifying cave passages.</p>
-
                     <p>I will not use any drugs, alcohol, or any intoxicating substances in the cave or on the adjacent property.</p>
-
                     <p>I am stating that I am in good health and I am not taking any prescribed medicine at the present time and do not know of any health reasons that should keep me from entering and exploring this cave. I am 18 years of age or older. (No one under the age of 18 is allowed to enter this cave.)</p>
-
                     <p>I understand that it is a criminal act to knowingly harm any cave fauna or animal, formation, or endangered species.</p>
-
                     <p>I will cave with a minimum of four persons while on a Hatcher Pit trip. I understand that I have to have three other people on this trip, and they need to sign waivers.</p>
-
                     <p>I acknowledge that no compensation has been given to the trip leader or organizer of this trip (sharing transportation costs is acceptable).</p>
                 </div>
+
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" name="rulesAcknowledge" required class="mt-1 w-5 h-5 rounded border-gray-600 bg-cave-dark text-cave-emerald focus:ring-cave-emerald">
+                    <span class="text-gray-300">I agree to follow all cave conservation and safety rules *</span>
+                </label>
             </section>
 
             <!-- Liability Release -->
             <section class="mb-8 pb-8 border-b border-gray-700/50">
                 <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Liability Release</h3>
 
-                <p class="text-gray-300 leading-relaxed print-black">
+                <p class="text-gray-300 leading-relaxed print-black mb-6">
                     I, for myself and my heirs, personal representatives, or assignees, from the date of this release and waiver agreement, and forever hereafter, hold Jeff Hatcher (the property owner) and the trip leaders and trip members harmless and blameless for any injury, including death, to myself occasioned by my participation in, or presence at caving activities, whether resulting by or through the negligence of Jeff Hatcher, or the trip leaders or trip members, their agents, servants, officers, or employees. Should I, my heirs, personal representatives, or assignees, institute any action against either Jeff Hatcher, trip leaders, or trip members arising out of injury or death to myself or property, then and in that event, I for myself and my heirs, legal representatives, and assignees, <strong class="text-white">HEREBY AGREE</strong> to pay all costs of such action, including attorney fees incurred by them.
                 </p>
+
+                <label class="flex items-start gap-3 cursor-pointer">
+                    <input type="checkbox" name="liabilityAcknowledge" required class="mt-1 w-5 h-5 rounded border-gray-600 bg-cave-dark text-cave-emerald focus:ring-cave-emerald">
+                    <span class="text-gray-300">I agree to the liability release terms *</span>
+                </label>
             </section>
 
-            <!-- Signature Section -->
+            <!-- Participant Information -->
             <section>
-                <h3 class="text-2xl font-bold text-cave-emerald-light mb-6 print-black">Witness My Hand and Seal This Date:</h3>
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-6 print-black">Participant Information</h3>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Date:</label>
-                        <div class="signature-line"></div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Signed:</label>
-                        <div class="signature-line"></div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Print Name:</label>
-                        <div class="signature-line"></div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Birth Date:</label>
-                        <div class="signature-line"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2">
+                        <label for="address" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Street Address *</label>
+                        <input type="text" id="address" name="address" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
                     </div>
 
                     <div class="md:col-span-2">
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Address:</label>
-                        <div class="signature-line"></div>
-                    </div>
-
-                    <div class="md:col-span-2">
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">City, State, ZIP:</label>
-                        <div class="signature-line"></div>
+                        <label for="cityStateZip" class="block text-sm font-semibold text-gray-300 mb-2 print-black">City, State, ZIP *</label>
+                        <input type="text" id="cityStateZip" name="cityStateZip" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                               placeholder="City, State ZIP">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Phone:</label>
-                        <div class="signature-line"></div>
+                        <label for="phone" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                               placeholder="(555) 555-5555">
                     </div>
 
                     <div>
-                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Email:</label>
-                        <div class="signature-line"></div>
+                        <label for="email" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Email Address *</label>
+                        <input type="email" id="email" name="email" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                               placeholder="your@email.com">
+                    </div>
+
+                    <div>
+                        <label for="birthDate" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Birth Date *</label>
+                        <input type="date" id="birthDate" name="birthDate" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
+                    </div>
+
+                    <div>
+                        <label for="tripDate" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Planned Trip Date *</label>
+                        <input type="date" id="tripDate" name="tripDate" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
                     </div>
                 </div>
 
-                <div class="border-t border-gray-700/50 pt-8 mb-8">
-                    <h4 class="text-xl font-bold text-cave-emerald-light mb-6 print-black">In Case Of Emergency:</h4>
+                <div class="mt-8 pt-8 border-t border-gray-700/50">
+                    <h4 class="text-xl font-bold text-cave-emerald-light mb-6 print-black">Emergency Contacts</h4>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Contact #1 Name:</label>
-                            <div class="signature-line"></div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Contact #1 Phone:</label>
-                            <div class="signature-line"></div>
-                        </div>
-
-                        <div class="md:col-span-2">
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Relationship:</label>
-                            <div class="signature-line"></div>
+                            <label for="emergency1Name" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Contact #1 Name *</label>
+                            <input type="text" id="emergency1Name" name="emergency1Name" required
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Contact #2 Name:</label>
-                            <div class="signature-line"></div>
+                            <label for="emergency1Phone" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Contact #1 Phone *</label>
+                            <input type="tel" id="emergency1Phone" name="emergency1Phone" required
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
                         </div>
 
                         <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Contact #2 Phone:</label>
-                            <div class="signature-line"></div>
+                            <label for="emergency1Relationship" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Relationship *</label>
+                            <input type="text" id="emergency1Relationship" name="emergency1Relationship" required
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                                   placeholder="Spouse, Parent, etc.">
                         </div>
 
-                        <div class="md:col-span-2">
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Relationship:</label>
-                            <div class="signature-line"></div>
+                        <div>
+                            <label for="emergency2Name" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Contact #2 Name</label>
+                            <input type="text" id="emergency2Name" name="emergency2Name"
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
+                        </div>
+
+                        <div>
+                            <label for="emergency2Phone" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Contact #2 Phone</label>
+                            <input type="tel" id="emergency2Phone" name="emergency2Phone"
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition">
+                        </div>
+
+                        <div>
+                            <label for="emergency2Relationship" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Relationship</label>
+                            <input type="text" id="emergency2Relationship" name="emergency2Relationship"
+                                   class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition"
+                                   placeholder="Spouse, Parent, etc.">
                         </div>
                     </div>
                 </div>
 
-                <div class="border-t border-gray-700/50 pt-8">
-                    <h4 class="text-xl font-bold text-cave-emerald-light mb-6 print-black">Property Owner Acknowledgment:</h4>
+                <div class="mt-8 pt-8 border-t border-gray-700/50">
+                    <h4 class="text-xl font-bold text-cave-emerald-light mb-6 print-black">Electronic Signature</h4>
+                    <p class="text-gray-300 mb-6">By typing your name below and submitting this form, you are providing your electronic signature and agreeing to all terms and conditions of this waiver.</p>
 
-                    <p class="text-gray-300 mb-6 print-black">
-                        I, Jeff Hatcher, acknowledge that I have reviewed this waiver with the participant and grant permission for the above-named individual to access Hatcher Pit on this date.
-                    </p>
+                    <div>
+                        <label for="signature" class="block text-sm font-semibold text-gray-300 mb-2 print-black">Type Your Full Name to Sign *</label>
+                        <input type="text" id="signature" name="signature" required
+                               class="w-full px-4 py-3 rounded-lg bg-cave-dark/80 border border-gray-600 text-white focus:outline-none focus:border-cave-emerald focus:ring-1 focus:ring-cave-emerald transition font-serif text-lg"
+                               placeholder="Your full legal name">
+                        <p class="text-sm text-gray-400 mt-2">Date: <span id="currentDate"></span></p>
+                    </div>
+                </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Property Owner Signature:</label>
-                            <div class="signature-line"></div>
-                        </div>
-
-                        <div>
-                            <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Date:</label>
-                            <div class="signature-line"></div>
-                        </div>
+                <div class="mt-8 pt-8 border-t border-gray-700/50">
+                    <h4 class="text-xl font-bold text-yellow-500 mb-4 print-black">Property Owner Acknowledgment</h4>
+                    <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 mb-6">
+                        <p class="text-gray-300 text-sm">
+                            <strong>Note:</strong> Your waiver submission will be sent to Jeff Hatcher for review and approval. You will receive confirmation via email once the property owner has acknowledged your waiver. Please wait for this confirmation before planning your trip.
+                        </p>
                     </div>
                 </div>
             </section>
 
-        </div>
+            <!-- Submit Button -->
+            <div class="mt-8 pt-8 border-t border-gray-700/50">
+                <button type="submit" id="submitBtn"
+                        class="w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-4 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                    Submit Waiver for Property Owner Approval
+                </button>
+                <p class="text-sm text-gray-400 text-center mt-4">* Required fields</p>
+            </div>
+        </form>
 
-        <!-- Action Buttons -->
+        <!-- Action Buttons (after submission) -->
         <div class="flex gap-4 justify-center no-print mb-8">
-            <button onclick="window.print()"
-                    class="bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
-                Print Waiver
-            </button>
             <a href="index.html"
                class="bg-cave-slate hover:bg-cave-dark text-white font-semibold py-3 px-8 rounded-lg transition duration-300 border border-gray-600">
                 Back to Cave List
@@ -296,6 +337,68 @@
             <p class="text-xs text-gray-500">Cave safely and responsibly</p>
         </div>
     </footer>
+
+    <script>
+        // Set current date
+        document.getElementById('currentDate').textContent = new Date().toLocaleDateString();
+
+        // Form submission handler
+        document.getElementById('waiverForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const submitBtn = document.getElementById('submitBtn');
+            const successMsg = document.getElementById('successMessage');
+            const errorMsg = document.getElementById('errorMessage');
+
+            // Hide messages
+            successMsg.classList.add('hidden');
+            errorMsg.classList.add('hidden');
+
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+
+            try {
+                // Collect form data
+                const formData = new FormData(e.target);
+                const data = Object.fromEntries(formData.entries());
+                data.submittedAt = new Date().toISOString();
+
+                // Submit to Cloudflare Function
+                const response = await fetch('/api/submit-waiver', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    // Success
+                    successMsg.classList.remove('hidden');
+                    e.target.reset();
+                    // Scroll to success message
+                    successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    // Error
+                    errorMsg.classList.remove('hidden');
+                    document.getElementById('errorText').textContent = result.error || 'There was an error submitting your waiver. Please try again.';
+                    errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                errorMsg.classList.remove('hidden');
+                document.getElementById('errorText').textContent = 'Network error. Please check your connection and try again.';
+                errorMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } finally {
+                // Re-enable submit button
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Waiver for Property Owner Approval';
+            }
+        });
+    </script>
 
 </body>
 </html>
