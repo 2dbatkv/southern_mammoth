@@ -3,126 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ferguson Entrance to Mammoth Cave System - Release and Waiver of Liability Agreement">
     <title>Ferguson Entrance Waiver - Southern Mammoth Project Area</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cave-dark': '#0f172a',
+                        'cave-slate': '#1e293b',
+                        'cave-emerald': '#10b981',
+                        'cave-emerald-light': '#34d399',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .waiver-content {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+        }
+        .signature-line {
+            border-bottom: 2px solid #4b5563;
+            min-height: 40px;
+            transition: border-color 0.3s;
+        }
+        .signature-line:hover {
+            border-color: #10b981;
+        }
+        @media print {
+            body {
+                background: white;
+            }
+            .waiver-content {
+                background: white;
+                border: 1px solid #000;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-black {
+                color: black !important;
+            }
+            .signature-line {
+                border-bottom: 1px solid black;
+            }
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <nav class="breadcrumb">
-            <a href="index.html">&larr; Back to Cave List</a>
-        </nav>
+<body class="text-gray-100 font-sans antialiased min-h-screen">
 
-        <header class="waiver-header">
-            <h1>Ferguson Entrance to the Mammoth Cave System</h1>
-            <p class="subtitle">Non-Commercial Vertical Entrance - FEMCS</p>
-        </header>
+    <!-- Header -->
+    <header class="py-6 border-b border-gray-700/50 no-print">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-bold">
+                    <span class="text-cave-emerald">Southern Mammoth</span>
+                    <span class="text-gray-400"> Project Area</span>
+                </h1>
+                <a href="index.html" class="text-cave-emerald-light hover:text-cave-emerald text-sm transition">
+                    &larr; Back to Cave List
+                </a>
+            </div>
+        </div>
+    </header>
 
-        <main class="waiver-content">
-            <section class="waiver-section">
-                <h2>Release and Waiver of Liability Agreement</h2>
-                <p class="date-note">(5/2020)</p>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
 
-                <p>I, the undersigned, (please print) <span class="form-field">________________</span>, in consideration of my being granted permission, from time to time, to visit the Fergusson Entrance to the Mammoth Cave System (FEMCS), Edmonson County, Kentucky, such permission granted to me at my specific request, hereby agree as follows:</p>
+        <!-- Title Section -->
+        <div class="text-center mb-8">
+            <h2 class="text-4xl font-bold mb-2 print-black">
+                <span class="text-cave-emerald print-black">Ferguson Entrance</span>
+            </h2>
+            <p class="text-xl text-gray-300 print-black">to the Mammoth Cave System</p>
+            <p class="text-cave-emerald-light font-mono text-sm mt-2 print-black">Non-Commercial Vertical Entrance - FEMCS</p>
+        </div>
 
-                <p>I knowingly, freely, and voluntarily, for myself, my heirs, personal representatives, and assignees, <strong>WAIVE</strong> any right or cause of action, of any kind whatsoever, arising as a result of my visiting the Fergusson Entrance to the Mammoth Cave System (FEMCS) or the adjacent property, from which any liability may or could accrue to the current owner or owners of record, their heirs, executors, and administrators, and trip leaders and trip members and assume all risks of injury to myself, including death by rock fall, falling, drowning or other accident, and to my property, while participating in cave exploring, any other in-cave or surface activities, or in any activities incidental thereto from the beginning of time up to and including the full extent of the time that I am on or within the bounds of this and their property.</p>
+        <!-- Waiver Content -->
+        <div class="waiver-content rounded-lg p-8 mb-8">
+
+            <!-- Main Agreement -->
+            <section class="mb-8">
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-2 print-black">Release and Waiver of Liability Agreement</h3>
+                <p class="text-gray-400 text-sm mb-4 print-black">(5/2020)</p>
+
+                <p class="text-gray-300 mb-4 leading-relaxed print-black">
+                    I, the undersigned, (please print) <span class="inline-block border-b border-gray-500 min-w-[200px] px-2">________________</span>, in consideration of my being granted permission, from time to time, to visit the Fergusson Entrance to the Mammoth Cave System (FEMCS), Edmonson County, Kentucky, such permission granted to me at my specific request, hereby agree as follows:
+                </p>
+
+                <p class="text-gray-300 leading-relaxed print-black">
+                    I knowingly, freely, and voluntarily, for myself, my heirs, personal representatives, and assignees, <strong class="text-white">WAIVE</strong> any right or cause of action, of any kind whatsoever, arising as a result of my visiting the Fergusson Entrance to the Mammoth Cave System (FEMCS) or the adjacent property, from which any liability may or could accrue to the current owner or owners of record, their heirs, executors, and administrators, and trip leaders and trip members and assume all risks of injury to myself, including death by rock fall, falling, drowning or other accident, and to my property, while participating in cave exploring, any other in-cave or surface activities, or in any activities incidental thereto from the beginning of time up to and including the full extent of the time that I am on or within the bounds of this and their property.
+                </p>
             </section>
 
-            <section class="waiver-section">
-                <h2>White-nose Syndrome Prevention</h2>
+            <!-- White-nose Syndrome Prevention -->
+            <section class="mb-8 pb-8 border-b border-gray-700/50">
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">White-nose Syndrome Prevention</h3>
 
-                <p>I will not enter the cave with muddy or soiled clothes, boots, or other gear as a preventative measure against the human transportation of the fungus Geomyces destructans (the reported cause of White-nose Syndrome) or other pathogens that may have negative impacts on the fauna of the cave. Equipment and clothing known to have been used in other cave regions will be properly decontaminated using accepted methods (see the NSS or USFWS websites) prior to entering FEMCS. Likewise, I will properly clean and decontaminate all my equipment, clothing, and boots AFTER visiting this cave.</p>
+                <p class="text-gray-300 leading-relaxed print-black">
+                    I will not enter the cave with muddy or soiled clothes, boots, or other gear as a preventative measure against the human transportation of the fungus Geomyces destructans (the reported cause of White-nose Syndrome) or other pathogens that may have negative impacts on the fauna of the cave. Equipment and clothing known to have been used in other cave regions will be properly decontaminated using accepted methods (see the NSS or USFWS websites) prior to entering FEMCS. Likewise, I will properly clean and decontaminate all my equipment, clothing, and boots AFTER visiting this cave.
+                </p>
             </section>
 
-            <section class="waiver-section">
-                <h2>Acknowledgments</h2>
+            <!-- Acknowledgments -->
+            <section class="mb-8 pb-8 border-b border-gray-700/50">
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Acknowledgments</h3>
 
-                <p>I acknowledge that the Fergusson Entrance to Mammoth Cave System (FEMCS) is a completely "wild" cave, (non-commercial cave), and no improvements have been made or are desirable. I understand that a visit to a wild cave involves certain risks including but not limited to those listed on this Release and Waiver Agreement. I desire to visit the Fergusson Entrance to Mammoth Cave System (FEMCS) and will do so completely at my own risk.</p>
+                <div class="space-y-4 text-gray-300 leading-relaxed print-black">
+                    <p>I acknowledge that the Fergusson Entrance to Mammoth Cave System (FEMCS) is a completely "wild" cave, (non-commercial cave), and no improvements have been made or are desirable. I understand that a visit to a wild cave involves certain risks including but not limited to those listed on this Release and Waiver Agreement. I desire to visit the Fergusson Entrance to Mammoth Cave System (FEMCS) and will do so completely at my own risk.</p>
 
-                <p>I acknowledge that the FEMCS allows access to a minimum of 350 miles of complex cave passage(s), there may be more passage(s) unknown to the owners, and that a very real danger of becoming lost exists.</p>
+                    <p>I acknowledge that the FEMCS allows access to a minimum of 350 miles of complex cave passage(s), there may be more passage(s) unknown to the owners, and that a very real danger of becoming lost exists.</p>
 
-                <p>I acknowledge the cave entrance is a karst window and has a vertical drop of over 80 feet and all the inherent risks and dangers associated with such. I acknowledge that I am certified and well trained in vertical caving and own my own gear and will be using my own gear. I will not be sharing gear with others.</p>
+                    <p>I acknowledge the cave entrance is a karst window and has a vertical drop of over 80 feet and all the inherent risks and dangers associated with such. I acknowledge that I am certified and well trained in vertical caving and own my own gear and will be using my own gear. I will not be sharing gear with others.</p>
 
-                <p>I acknowledge that I will be using existing manmade or natural rigging points and/or anchors for attaching my rope(s) to and these could break or dislodge accidently or by unknown means. I will use a backup rig point for all anchors and rigging points.</p>
+                    <p>I acknowledge that I will be using existing manmade or natural rigging points and/or anchors for attaching my rope(s) to and these could break or dislodge accidently or by unknown means. I will use a backup rig point for all anchors and rigging points.</p>
 
-                <p>I acknowledge that regions of FEMCS are physically demanding and may require total immersion in a minimum of 54°F water with the associated risks.</p>
+                    <p>I acknowledge that regions of FEMCS are physically demanding and may require total immersion in a minimum of 54°F water with the associated risks.</p>
 
-                <p>I acknowledge that any or all of the FEMCS passage could and is known to flood partially and/or completely, and that it is impossible to predict the time lag between rainfall and flood-flow in the cave. I understand that the water in FEMCS is polluted by unknown means and may be dangerous to my health.</p>
+                    <p>I acknowledge that any or all of the FEMCS passage could and is known to flood partially and/or completely, and that it is impossible to predict the time lag between rainfall and flood-flow in the cave. I understand that the water in FEMCS is polluted by unknown means and may be dangerous to my health.</p>
 
-                <p>I acknowledge that steep, slippery mud banks, loose piles of rock, unstable canyons, and rock falls occur in various locations in the cave and pose hazards known or unknown, such as, but not limited to, slipping, falling, and being hit or crushed.</p>
+                    <p>I acknowledge that steep, slippery mud banks, loose piles of rock, unstable canyons, and rock falls occur in various locations in the cave and pose hazards known or unknown, such as, but not limited to, slipping, falling, and being hit or crushed.</p>
 
-                <p>I acknowledge that there may be higher levels of radioactivity in a limestone cave as compared to the surface of the earth for completely natural reasons and that the effect of this radiation on a cave explorer is unknown; but that smoking increases the amount of this radiation absorbed by the body. I will not smoke in the cave.</p>
+                    <p>I acknowledge that there may be higher levels of radioactivity in a limestone cave as compared to the surface of the earth for completely natural reasons and that the effect of this radiation on a cave explorer is unknown; but that smoking increases the amount of this radiation absorbed by the body. I will not smoke in the cave.</p>
 
-                <p>I acknowledge that access to FEMCS is controlled by a locked gate and that the lock is changed at random times. If I enter the cave at times other than that for which I have received permission, there is a real danger of being locked in the cave by a lock change. I understand that, due to a mechanical malfunction of the gate or lock, that I may be unable to get out of the cave. I will prepare for this eventuality by telling someone of my plans and carrying adequate food and clothing.</p>
+                    <p>I acknowledge that access to FEMCS is controlled by a locked gate and that the lock is changed at random times. If I enter the cave at times other than that for which I have received permission, there is a real danger of being locked in the cave by a lock change. I understand that, due to a mechanical malfunction of the gate or lock, that I may be unable to get out of the cave. I will prepare for this eventuality by telling someone of my plans and carrying adequate food and clothing.</p>
 
-                <p>I acknowledge the gate door is very heavy and combined with the vertical entrance could result in injury if opened, dropped, closed, or misused while someone is entering, exiting, climbing, or rappelling the entrance drop. I will not use the gate as a hand hold or for any other means while using this entrance.</p>
+                    <p>I acknowledge the gate door is very heavy and combined with the vertical entrance could result in injury if opened, dropped, closed, or misused while someone is entering, exiting, climbing, or rappelling the entrance drop. I will not use the gate as a hand hold or for any other means while using this entrance.</p>
 
-                <p>I acknowledge that I have the proper equipment to go caving, to include but not limited to, three sources of lights, helmet, gloves, and boots, in addition to the necessary vertical cave equipment. I am well versed and trained in caving first aid, cave rescue, and caving self-rescue.</p>
+                    <p>I acknowledge that I have the proper equipment to go caving, to include but not limited to, three sources of lights, helmet, gloves, and boots, in addition to the necessary vertical cave equipment. I am well versed and trained in caving first aid, cave rescue, and caving self-rescue.</p>
+                </div>
             </section>
 
-            <section class="waiver-section">
-                <h2>Cave Conservation and Safety Rules</h2>
+            <!-- Cave Conservation and Safety Rules -->
+            <section class="mb-8 pb-8 border-b border-gray-700/50">
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Cave Conservation and Safety Rules</h3>
 
-                <p>I will not leave anything in the cave that I took in with me and I will not bring anything extra out of the cave except the normal mud on my clothing and all trash that is left by other cavers.</p>
+                <div class="space-y-4 text-gray-300 leading-relaxed print-black">
+                    <p>I will not leave anything in the cave that I took in with me and I will not bring anything extra out of the cave except the normal mud on my clothing and all trash that is left by other cavers.</p>
 
-                <p>I will not make any changes to the cave including digging or modifying cave passages.</p>
+                    <p>I will not make any changes to the cave including digging or modifying cave passages.</p>
 
-                <p>I will not use any drugs, alcohol, or any intoxicating substances in the cave or on the adjacent cave property.</p>
+                    <p>I will not use any drugs, alcohol, or any intoxicating substances in the cave or on the adjacent cave property.</p>
 
-                <p>I am stating that I am in good health and I am not taking any prescribed medicine at the present time and do not know of any health reasons that should keep me from entering and exploring this cave. I am 18 years of age or older. (No one under the age of 18 is allowed to enter this cave.)</p>
+                    <p>I am stating that I am in good health and I am not taking any prescribed medicine at the present time and do not know of any health reasons that should keep me from entering and exploring this cave. I am 18 years of age or older. (No one under the age of 18 is allowed to enter this cave.)</p>
 
-                <p>I will not venture or enter any commercial portion of Mammoth Cave National Park without prior written permission to do so by the MCNP Authority. I understand that it is a criminal act, both state and federal, to knowingly harm any cave fauna or animal, formation, or endangered species.</p>
+                    <p>I will not venture or enter any commercial portion of Mammoth Cave National Park without prior written permission to do so by the MCNP Authority. I understand that it is a criminal act, both state and federal, to knowingly harm any cave fauna or animal, formation, or endangered species.</p>
 
-                <p>I will cave with a minimum of four persons while on a FEMCS trip. I understand that I have to have three other people on this trip, and they need to sign waivers.</p>
+                    <p>I will cave with a minimum of four persons while on a FEMCS trip. I understand that I have to have three other people on this trip, and they need to sign waivers.</p>
 
-                <p>I acknowledge that no compensation has been given to the trip leader or organizer of this trip (sharing transportation costs is acceptable).</p>
+                    <p>I acknowledge that no compensation has been given to the trip leader or organizer of this trip (sharing transportation costs is acceptable).</p>
+                </div>
             </section>
 
-            <section class="waiver-section">
-                <h2>Liability Release</h2>
+            <!-- Liability Release -->
+            <section class="mb-8 pb-8 border-b border-gray-700/50">
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-4 print-black">Liability Release</h3>
 
-                <p>I, for myself and my heirs, personal representatives, or assignees, from the date of this release and waiver agreement, and forever hereafter, hold the owner or owners of record and the trip leaders and trip members harmless and blameless for any injury, including death, to myself occasioned by my participation in, or presence at caving activities, whether resulting by or through the negligence of the owner or owners of record, or the trip leaders or trip members, their agents, servants, officers, or employees. Should I, my heirs, personal representatives, or assignees, institute any action against either the owner or owners of record, trip leaders, or trip members arising out of injury or death to myself or property, then and in that event, I for myself and my heirs, legal representatives, and assignees, <strong>HEREBY AGREE</strong> to pay all costs of such action, including attorney fees incurred by them.</p>
+                <p class="text-gray-300 leading-relaxed print-black">
+                    I, for myself and my heirs, personal representatives, or assignees, from the date of this release and waiver agreement, and forever hereafter, hold the owner or owners of record and the trip leaders and trip members harmless and blameless for any injury, including death, to myself occasioned by my participation in, or presence at caving activities, whether resulting by or through the negligence of the owner or owners of record, or the trip leaders or trip members, their agents, servants, officers, or employees. Should I, my heirs, personal representatives, or assignees, institute any action against either the owner or owners of record, trip leaders, or trip members arising out of injury or death to myself or property, then and in that event, I for myself and my heirs, legal representatives, and assignees, <strong class="text-white">HEREBY AGREE</strong> to pay all costs of such action, including attorney fees incurred by them.
+                </p>
             </section>
 
-            <section class="signature-section">
-                <h2>Witness My Hand and Seal This Date:</h2>
+            <!-- Signature Section -->
+            <section>
+                <h3 class="text-2xl font-bold text-cave-emerald-light mb-6 print-black">Witness My Hand and Seal This Date:</h3>
 
-                <div class="signature-fields">
-                    <div class="field-group">
-                        <label>Signed:</label>
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Signed:</label>
                         <div class="signature-line"></div>
                     </div>
 
-                    <div class="field-group">
-                        <label>Address:</label>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Address:</label>
                         <div class="signature-line"></div>
                     </div>
 
-                    <div class="field-group">
-                        <label>Birth Date:</label>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Birth Date:</label>
                         <div class="signature-line"></div>
                     </div>
 
-                    <div class="field-group">
-                        <label>In Case Of Emergency Contact #1:</label>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">In Case Of Emergency Contact #1:</label>
                         <div class="signature-line"></div>
                     </div>
 
-                    <div class="field-group">
-                        <label>Contact #2:</label>
+                    <div>
+                        <label class="block text-sm font-semibold text-gray-400 mb-2 print-black">Contact #2:</label>
                         <div class="signature-line"></div>
                     </div>
                 </div>
             </section>
 
-            <div class="action-buttons">
-                <button onclick="window.print()" class="btn btn-print">Print Waiver</button>
-                <a href="index.html" class="btn btn-secondary">Back to Cave List</a>
-            </div>
-        </main>
+        </div>
 
-        <footer>
-            <p>&copy; 2026 Southern Mammoth Project Area | Cave safely and responsibly</p>
-        </footer>
-    </div>
+        <!-- Action Buttons -->
+        <div class="flex gap-4 justify-center no-print mb-8">
+            <button onclick="window.print()"
+                    class="bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-8 rounded-lg transition duration-300 transform hover:scale-105">
+                Print Waiver
+            </button>
+            <a href="index.html"
+               class="bg-cave-slate hover:bg-cave-dark text-white font-semibold py-3 px-8 rounded-lg transition duration-300 border border-gray-600">
+                Back to Cave List
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-700/50 py-8 mt-16 no-print">
+        <div class="max-w-5xl mx-auto px-6 text-center text-gray-400 text-sm">
+            <p class="mb-2">&copy; 2026 Southern Mammoth Project Area</p>
+            <p class="text-xs text-gray-500">Cave safely and responsibly</p>
+        </div>
+    </footer>
+
 </body>
 </html>

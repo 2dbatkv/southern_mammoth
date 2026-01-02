@@ -3,71 +3,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cave access waivers for Southern Mammoth Project Area - Ferguson Entrance and Hatcher Pit Cave">
     <title>Southern Mammoth Project Area - Cave Waivers</title>
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'cave-dark': '#0f172a',
+                        'cave-slate': '#1e293b',
+                        'cave-emerald': '#10b981',
+                        'cave-emerald-light': '#34d399',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Southern Mammoth Project Area</h1>
-            <p class="subtitle">Cave Access Waivers</p>
-        </header>
+<body class="text-gray-100 font-sans antialiased min-h-screen">
 
-        <main>
-            <section class="intro">
-                <p>Access to caves in the Southern Mammoth Project Area requires a signed waiver. Please select the cave you plan to visit below to view and download the required waiver.</p>
-                <p class="important"><strong>Important:</strong> All participants must be 18 years or older and must sign a waiver before entering any cave.</p>
-            </section>
+    <!-- Header -->
+    <header class="py-6 border-b border-gray-700/50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-2xl font-bold">
+                <span class="text-cave-emerald">Southern Mammoth</span>
+                <span class="text-gray-400"> Project Area</span>
+            </h1>
+        </div>
+    </header>
 
-            <section class="cave-list">
-                <div class="cave-card">
-                    <h2>Ferguson Entrance</h2>
-                    <p class="cave-description">
-                        Non-commercial vertical entrance to the Mammoth Cave System (FEMCS).
-                        Minimum 350 miles of complex cave passage. Vertical drop of over 80 feet.
-                    </p>
-                    <div class="cave-details">
-                        <ul>
-                            <li><strong>Type:</strong> Vertical entrance</li>
-                            <li><strong>Minimum Group:</strong> 4 persons</li>
-                            <li><strong>Requirements:</strong> Vertical caving certification, personal gear</li>
-                        </ul>
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-6 py-12">
+
+        <!-- Hero Section -->
+        <section class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold mb-4">
+                    Cave Access <span class="text-cave-emerald">Waivers</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Access to caves in the Southern Mammoth Project Area requires a signed waiver. Select the cave you plan to visit below.
+                </p>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="card max-w-3xl mx-auto p-6 border-yellow-500/30">
+                <div class="flex items-start gap-4">
+                    <svg class="w-6 h-6 text-yellow-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-yellow-500 font-semibold text-lg mb-1">Important Requirements</h3>
+                        <p class="text-gray-300">All participants must be <strong>18 years or older</strong> and must sign a waiver before entering any cave. Minimum group size: <strong>4 persons</strong>.</p>
                     </div>
-                    <a href="ferguson.html" class="btn btn-primary">View Ferguson Waiver</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cave Cards -->
+        <section class="mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <!-- Ferguson Cave Card -->
+                <div class="card p-8">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-white mb-2">Ferguson Entrance</h3>
+                        <p class="text-cave-emerald-light font-mono text-sm">FEMCS - Mammoth Cave System</p>
+                    </div>
+
+                    <p class="text-gray-300 mb-6">
+                        Non-commercial vertical entrance to the Mammoth Cave System with access to a minimum of 350 miles of complex cave passage.
+                    </p>
+
+                    <div class="space-y-3 mb-6 text-sm">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Type:</strong> Vertical entrance (80+ ft drop)</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Location:</strong> Edmonson County, Kentucky</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Requirements:</strong> Vertical certification, personal gear</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Group size:</strong> Minimum 4 persons</span>
+                        </div>
+                    </div>
+
+                    <a href="ferguson.html"
+                       class="block w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 text-center">
+                        View Ferguson Waiver
+                    </a>
                 </div>
 
-                <div class="cave-card">
-                    <h2>Hatcher Pit Cave</h2>
-                    <p class="cave-description">
-                        Non-commercial vertical entrance cave located on private property.
-                        Wild cave with vertical pit entrance requiring technical vertical caving skills.
+                <!-- Hatcher Pit Card -->
+                <div class="card p-8">
+                    <div class="mb-4">
+                        <h3 class="text-2xl font-bold text-white mb-2">Hatcher Pit Cave</h3>
+                        <p class="text-cave-emerald-light font-mono text-sm">Private Property Access</p>
+                    </div>
+
+                    <p class="text-gray-300 mb-6">
+                        Non-commercial vertical pit entrance cave located on private property. Wild cave requiring technical vertical caving skills.
                     </p>
-                    <div class="cave-details">
-                        <ul>
-                            <li><strong>Type:</strong> Vertical pit entrance</li>
-                            <li><strong>Minimum Group:</strong> 4 persons</li>
-                            <li><strong>Requirements:</strong> Vertical caving certification, personal gear</li>
+
+                    <div class="space-y-3 mb-6 text-sm">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Type:</strong> Vertical pit entrance</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Owner:</strong> Jeff Hatcher (private property)</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Requirements:</strong> Vertical certification, personal gear</span>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cave-emerald flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300"><strong>Group size:</strong> Minimum 4 persons</span>
+                        </div>
+                    </div>
+
+                    <a href="hatcher.html"
+                       class="block w-full bg-cave-emerald hover:bg-cave-emerald-light text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 text-center">
+                        View Hatcher Pit Waiver
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Safety Requirements Section -->
+        <section class="mb-16">
+            <h3 class="text-3xl font-bold mb-8 text-center">
+                <span class="text-cave-emerald">General</span> Safety Requirements
+            </h3>
+
+            <div class="card p-8 max-w-3xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-lg font-semibold text-cave-emerald-light mb-4">Required Equipment</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Three sources of light</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Helmet, gloves, and boots</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Vertical cave equipment</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Personal gear (no sharing)</span>
+                            </li>
                         </ul>
                     </div>
-                    <a href="hatcher.html" class="btn btn-primary">View Hatcher Pit Waiver</a>
+
+                    <div>
+                        <h4 class="text-lg font-semibold text-cave-emerald-light mb-4">Required Training</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Vertical caving certification</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Caving first aid knowledge</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Cave rescue training</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Self-rescue capabilities</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="md:col-span-2 pt-4 border-t border-gray-600/50">
+                        <h4 class="text-lg font-semibold text-cave-emerald-light mb-4">Conservation & Safety</h4>
+                        <ul class="space-y-2 text-gray-300 text-sm">
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Clean gear required (White-nose Syndrome prevention)</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>No drugs, alcohol, or intoxicating substances</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>Pack out everything you pack in</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-cave-emerald mt-1">•</span>
+                                <span>No digging or modifying cave passages</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="safety-info">
-                <h2>General Safety Requirements</h2>
-                <ul>
-                    <li>Minimum of 4 people per trip</li>
-                    <li>Three sources of light, helmet, gloves, boots, and vertical equipment</li>
-                    <li>Training in caving first aid, cave rescue, and self-rescue</li>
-                    <li>Clean gear to prevent White-nose Syndrome transmission</li>
-                    <li>No drugs, alcohol, or intoxicating substances</li>
-                </ul>
-            </section>
-        </main>
+    </main>
 
-        <footer>
-            <p>&copy; 2026 Southern Mammoth Project Area | Cave safely and responsibly</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer class="border-t border-gray-700/50 py-8 mt-16">
+        <div class="max-w-5xl mx-auto px-6 text-center text-gray-400 text-sm">
+            <p class="mb-2">&copy; 2026 Southern Mammoth Project Area</p>
+            <p class="text-xs text-gray-500">Cave safely and responsibly</p>
+        </div>
+    </footer>
+
 </body>
 </html>
